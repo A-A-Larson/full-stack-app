@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Future Value Calculator</title>
+    <title>Future Value Calculator App</title>
     <link rel="stylesheet" href="main.css">
 </head>
 
