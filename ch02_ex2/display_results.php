@@ -23,7 +23,9 @@
         $error_message .= 'Interest rate must be a valid number.<br>'; 
     } else if ( $interest_rate <= 0 ) {
         $error_message .= 'Interest rate must be greater than zero.<br>'; 
-    } 
+    } else if ( $interest_rate >= 15 ) {
+        $error_message .= 'Interest rate must be less than or equal to 15.<br>'; 
+    }
     
     // validate years
     if ( $years === FALSE ) {
@@ -49,6 +51,8 @@
     $investment_f = '$'.number_format($investment, 2);
     $yearly_rate_f = $interest_rate.'%';
     $future_value_f = '$'.number_format($future_value, 2);
+
+    $current_date = date('m/d/Y');
 ?>
 <!DOCTYPE html>
 <html>
@@ -72,5 +76,6 @@
         <label>Future Value:</label>
         <span><?php echo $future_value_f; ?></span><br>
     </main>
+    <h2>This calulation was done on <?php echo $current_date; ?></h2>
 </body>
 </html>
