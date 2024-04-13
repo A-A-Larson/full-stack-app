@@ -77,6 +77,7 @@ $statement3->closeCursor();
                 <th>Name</th>
                 <th class="right">Price</th>
                 <th>&nbsp;</th>
+                <th>Description</th>
             </tr>
 
             <?php foreach ($products as $product) : ?>
@@ -84,12 +85,20 @@ $statement3->closeCursor();
                 <td><?php echo $product['productCode']; ?></td>
                 <td><?php echo $product['productName']; ?></td>
                 <td class="right"><?php echo $product['listPrice']; ?></td>
+                <td><?php echo $product['description']; ?></td>
                 <td><form action="delete_product.php" method="post">
                     <input type="hidden" name="product_id"
                            value="<?php echo $product['productID']; ?>">
                     <input type="hidden" name="category_id"
                            value="<?php echo $product['categoryID']; ?>">
                     <input type="submit" value="Delete">
+                </form></td>
+                <td><form action="modify_product.php" method="post">
+                    <input type="hidden" name="product_id"
+                           value="<?php echo $product['productID']; ?>">
+                    <input type="hidden" name="category_id"
+                           value="<?php echo $product['categoryID']; ?>">
+                    <input type="submit" value="Modify">
                 </form></td>
             </tr>
             <?php endforeach; ?>
