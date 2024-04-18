@@ -3,6 +3,8 @@
     if (!isset($investment)) { $investment = '10000'; } 
     if (!isset($interest_rate)) { $interest_rate = '5'; } 
     if (!isset($years)) { $years = '5'; } 
+    $total = 0;
+    $count = 10000;
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,12 +23,31 @@
 
         <div id="data">
             <label>Investment Amount:</label>
-            <input type="text" name="investment"
-                   value="<?php echo $investment; ?>"/><br>
 
+            <select name="investment">
+                <?php while ($investment <= 50000) { ?>
+                    <option value="<?php echo $investment; ?>"><?php echo $investment; ?></option>
+                <?php $investment += 5000  ?>
+                <?php } ?>
+            </select><br>
+        
+            <!-- <input type="text" name="investment"
+                   value=""/> -->
+
+            
             <label>Yearly Interest Rate:</label>
-            <input type="text" name="interest_rate"
-                   value="<?php echo $interest_rate; ?>"/><br>
+
+
+            <select name="interest_rate">
+                <?php while ($interest_rate <= 12) { ?>
+                    <option value="<?php echo $interest_rate; ?>"><?php echo $interest_rate; ?></option>
+                <?php $interest_rate += .5 ?>
+                <?php } ?>
+            </select><br>
+        
+
+            <!-- <input type="text" name="interest_rate"
+                   value=""/> -->
 
             <label>Number of Years:</label>
             <input type="text" name="years"
