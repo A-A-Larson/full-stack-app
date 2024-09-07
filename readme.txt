@@ -1,1 +1,0 @@
-This folder will contain the files that encompass your final project.
